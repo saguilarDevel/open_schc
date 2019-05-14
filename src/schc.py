@@ -92,6 +92,7 @@ class SCHCProtocol:
         # Do fragmenation
         rule = context["fragSender"]
         self._log("fragmentation rule_id={}".format(rule.ruleID))
+        print(rule.get("FRMode"))
         session = self.new_fragment_session(context, rule)
         session.set_packet(packet_bbuf)
         self.fragment_session.add(rule.ruleID, rule.ruleLength,
