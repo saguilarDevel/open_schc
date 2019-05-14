@@ -73,7 +73,7 @@ rm0 = RuleManager()
 rm0.add_context(rule[0], rule[1], rule[2], rule[3])
 
 rm1 = RuleManager()
-rm1.add_context(rule[0], rule[1], rule[3], rule[2])
+rm1.add_context(rule[0], rule[1], rule[2], rule[3])
 
 simul_config = {
     "log": True,

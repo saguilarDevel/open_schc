@@ -90,7 +90,12 @@ class SCHCProtocol:
             self._log("Rejected the packet due to no fragmenation rule.")
             return
         # Do fragmenation
+        #TODO ojo no es escalable, hay que qnqdir mqs rules
         rule = context["fragSender"]
+        idInRule = rule["ruleID"]
+        print(idInRule)
+        #if idInRule == 2:
+        #    rule = context["fragSender2"]
         self._log("fragmentation rule_id={}".format(rule.ruleID))
         print(rule.get("FRMode"))
         session = self.new_fragment_session(context, rule)
@@ -100,6 +105,7 @@ class SCHCProtocol:
         session.start_sending()
 
     def new_fragment_session(self, context, rule):
+        frag = rule["fragmentation"]
         mode = rule.get("FRMode")
         if mode == "noAck":
             session = FragmentNoAck(self, context, rule) # XXX
