@@ -118,7 +118,7 @@ loss_rate = 15
 collision_lambda = 0.1
 background_frag_size = 54
 loss_config = {"mode":"rate", "cycle":loss_rate}
-#loss_config = {"mode":"collision", "G":collision_lambda, "background_frag_size":background_frag_size}
+loss_config = {"mode":"collision", "G":collision_lambda, "background_frag_size":background_frag_size}
 
 #loss_config = None
 #L2 MTU size in bits - byte

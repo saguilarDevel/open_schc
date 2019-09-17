@@ -117,9 +117,9 @@ class ConditionalTrue:
 
             aleatoire = urandom.getrandbits(8)/256
             aleatoire2 = aleatoire/(2**24-1)
-            #print(aleatoire2)
+            print(aleatoire)
             if aleatoire2 != 0:
-                test = -1*math.log(aleatoire2) / 1/g
+                test = -1*math.log(aleatoire) / 1/g
                 self.background_traffic.append((test,test+T['t_packet']))
         if enable_statsct:
             Statsct.set_background_traffic(self.background_traffic)
